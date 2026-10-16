@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Valentina Ríos — Dermatología | Demo de estilos</title>
+<meta name="description" content="Dermatología clínica en San Miguel de Tucumán. Consultas, tratamientos y control de piel. Demo de plantillas visuales.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles/base.css">
+<link id="theme" rel="stylesheet" href="styles/minimalista.css">
+</head>
+<body>
+
+<!-- Barra del demo: selector de estilo (no forma parte de la plantilla) -->
+<div class="demo-bar">
+  <strong>Demo de estilos</strong>
+  <select id="style-picker" aria-label="Elegir estilo visual">
+    <option value="clasico">1 · Clásico sobrio</option>
+    <option value="minimalista" selected>2 · Moderno minimalista</option>
+    <option value="calido">3 · Cálido/cercano</option>
+    <option value="bold">4 · Bold/enérgico</option>
+    <option value="corporativo">5 · Corporativo</option>
+    <option value="dark">6 · Dark</option>
+  </select>
+</div>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <span class="brand">Dra. Valentina Ríos</span>
+    <nav class="nav">
+      <a href="#perfil">Perfil</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#blog">Blog</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="kicker">Dermatología clínica · San Miguel de Tucumán</p>
+        <h1>Cuidado de la piel con respaldo médico</h1>
+        <p class="lede">Diagnóstico y tratamiento de afecciones de la piel, control de lunares y dermatología estética. Atención personalizada, con turnos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/5493815551234?text=Hola,%20quiero%20solicitar%20un%20turno">Solicitar turno por WhatsApp</a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Foto de la Dra. Valentina Ríos"></div>
+    </div>
+  </section>
+
+  <section id="perfil" class="section">
+    <div class="container">
+      <h2>Perfil profesional</h2>
+      <div class="prose">
+        <p>Médica dermatóloga con más de 12 años de experiencia en el diagnóstico y tratamiento de enfermedades de la piel, el cabello y las uñas. Mi consulta combina la dermatología clínica con procedimientos estéticos de bajo riesgo, siempre con indicación médica.</p>
+        <p>Trabajo con pacientes de todas las edades y priorizo la educación: entender qué le pasa a tu piel es el primer paso del tratamiento.</p>
+      </div>
+      <ul class="credentials">
+        <li>M.N. 45.231 · M.P. 8.765 — Ministerio de Salud de Tucumán</li>
+        <li>Médica — Universidad Nacional de Tucumán (2009)</li>
+        <li>Residencia en Dermatología — Hospital Ángel C. Padilla</li>
+        <li>Miembro de la Sociedad Argentina de Dermatología</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="servicios" class="section section-alt">
+    <div class="container">
+      <h2>Servicios</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Consulta dermatológica</h3>
+          <p>Evaluación completa de la piel: diagnóstico, tratamiento y seguimiento de afecciones clínicas.</p>
+        </article>
+        <article class="card">
+          <h3>Control de lunares</h3>
+          <p>Dermatoscopia digital y mapeo corporal para detección temprana de lesiones de riesgo.</p>
+        </article>
+        <article class="card">
+          <h3>Dermatología estética</h3>
+          <p>Peelings, tratamiento de manchas, cicatrices de acné y rejuvenecimiento con criterio médico.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="trayectoria" class="section">
+    <div class="container">
+      <h2>Trayectoria</h2>
+      <ol class="timeline">
+        <li><span class="tl-date">2018 — actualidad</span><strong>Consultorio propio</strong><p>Dermatología clínica y estética en San Miguel de Tucumán.</p></li>
+        <li><span class="tl-date">2014 — 2018</span><strong>Dermatóloga — Clínica Mayo SRL</strong><p>Guardia y consulta externa de dermatología general.</p></li>
+        <li><span class="tl-date">2010 — 2014</span><strong>Residencia en Dermatología</strong><p>Hospital Ángel C. Padilla. Jefa de residentes, último año.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="blog" class="section section-alt">
+    <div class="container">
+      <h2>Del blog</h2>
+      <div class="cards">
+        <article class="card post">
+          <p class="post-meta">Protección solar · 4 min</p>
+          <h3>Protector solar en Tucumán: qué factor usar y cuándo renovarlo</h3>
+          <p>La radiación UV en el norte argentino es alta casi todo el año. Estas son las pautas que recomiendo en consulta.</p>
+          <a href="#" class="read-more">Leer →</a>
+        </article>
+        <article class="card post">
+          <p class="post-meta">Chequeos · 3 min</p>
+          <h3>Cada cuánto hay que controlarse los lunares</h3>
+          <p>La regla ABCDE para detectar cambios en lunares y cuándo conviene una dermatoscopia.</p>
+          <a href="#" class="read-more">Leer →</a>
+        </article>
+        <article class="card post">
+          <p class="post-meta">Acné · 5 min</p>
+          <h3>Acné en adultos: causas frecuentes y qué tratamientos funcionan</h3>
+          <p>El acné no es solo de adolescentes. Qué factores lo disparan y cómo lo abordamos.</p>
+          <a href="#" class="read-more">Leer →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container contact-inner">
+      <h2>Consultas y turnos</h2>
+      <p class="lede">Atiendo con turno previo. Consultorio en San Miguel de Tucumán.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://wa.me/5493815551234?text=Hola,%20quiero%20solicitar%20un%20turno">WhatsApp</a>
+        <a class="btn btn-ghost" href="mailto:consultas@dravalentinarios.com.ar">consultas@dravalentinarios.com.ar</a>
+      </div>
+      <p class="contact-note">Lunes a viernes, 8 a 13 y 17 a 20 h. Guardia dermatológica no disponible — ante urgencias, concurrir al hospital más cercano.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Dra. Valentina Ríos — Dermatología · San Miguel de Tucumán</p>
+    <p class="fineprint">Contenido con fines demostrativos. La información no reemplaza la consulta médica.</p>
+  </div>
+</footer>
+
+<script>
+const link = document.getElementById('theme');
+const picker = document.getElementById('style-picker');
+const params = new URLSearchParams(location.search);
+const saved = params.get('style') || localStorage.getItem('tpl-style');
+if (saved) { link.href = 'styles/' + saved + '.css'; picker.value = saved; }
+picker.addEventListener('change', e => {
+  const v = e.target.value;
+  link.href = 'styles/' + v + '.css';
+  localStorage.setItem('tpl-style', v);
+  history.replaceState(null, '', '?style=' + v);
+});
+</script>
+</body>
+</html>

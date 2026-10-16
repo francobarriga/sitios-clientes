@@ -1,0 +1,57 @@
+/* 4 · Bold/enérgico — tipografía enorme, negro/blanco + acento eléctrico.
+   Perfil: creativos, fotógrafos, profesionales jóvenes. */
+
+:root {
+  --font-display: 'Arial Black', 'Helvetica Neue', system-ui, sans-serif;
+  --font-body: 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --bg: #ffffff;
+  --surface: #f2f2f2;
+  --text: #0a0a0a;
+  --text-muted: #555555;
+  --accent: #d9f24f;          /* lima eléctrico */
+  --accent-contrast: #0a0a0a;
+  --border: #0a0a0a;
+  --radius: 0;
+  --max-w: 1100px;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: .95;
+}
+h2 { text-transform: uppercase; letter-spacing: -0.01em; }
+.kicker {
+  color: var(--text); background: var(--accent);
+  display: inline-block; padding: .2rem .6rem; font-weight: 700;
+}
+
+.site-header { border-bottom: 3px solid var(--text); }
+.brand { text-transform: uppercase; }
+.nav a { font-weight: 700; text-transform: uppercase; font-size: .85rem; letter-spacing: .05em; }
+
+.hero { background: var(--bg); }
+.hero-photo {
+  background: repeating-linear-gradient(45deg, var(--surface), var(--surface) 12px, #e5e5e5 12px, #e5e5e5 24px);
+  border: 3px solid var(--text);
+}
+.btn { border: 3px solid var(--text); text-transform: uppercase; letter-spacing: .05em; font-size: .85rem; }
+.btn-primary { background: var(--accent); color: var(--accent-contrast); box-shadow: 5px 5px 0 var(--text); }
+.btn-primary:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--text); }
+.btn-ghost { background: var(--bg); }
+
+.section-alt { background: var(--text); }
+.section-alt h2, .section-alt h3, .section-alt p { color: #fff; }
+.section-alt .post-meta, .section-alt .card p { color: #ccc; }
+.section-alt .card { background: #1a1a1a; border-color: #333; }
+.section-alt .read-more { color: var(--accent); }
+
+.card { border: 3px solid var(--text); }
+.card h3 { text-transform: uppercase; }
+
+.timeline li { border-left: 3px solid var(--text); }
+.timeline li::before { background: var(--accent); border: 2px solid var(--text); border-radius: 0; }
+
+.site-footer { background: var(--text); color: #eee; border-top: none; }
+.site-footer .fineprint { color: #999; }

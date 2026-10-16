@@ -1,0 +1,152 @@
+/* ============================================================
+   base.css — estructura compartida de las plantillas
+   Cada variante (clasico, minimalista, ...) solo redefine tokens
+   y algunos componentes puntuales.
+   ============================================================ */
+
+:root {
+  --font-display: system-ui, sans-serif;
+  --font-body: system-ui, sans-serif;
+  --bg: #fff;
+  --surface: #f6f6f4;
+  --text: #1a1a1a;
+  --text-muted: #5c5c5c;
+  --accent: #2563eb;
+  --accent-contrast: #fff;
+  --border: #e4e4e0;
+  --radius: 8px;
+  --max-w: 1080px;
+  --section-pad: 4.5rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 3rem; /* espacio para la demo-bar */
+}
+
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: .3em 0 .4em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 1.2rem; }
+h3 { font-size: 1.15rem; margin: 0 0 .5rem; }
+p  { margin: 0 0 1rem; }
+a  { color: var(--accent); }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- demo bar (no pertenece a la plantilla) ---------- */
+.demo-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; gap: .75rem;
+  padding: .4rem 1rem;
+  background: #111; color: #eee;
+  font: 0.8rem/1 system-ui, sans-serif;
+}
+.demo-bar select { font: inherit; padding: .25rem .4rem; }
+
+/* ---------- header / nav ---------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: .9rem; padding-bottom: .9rem;
+}
+.brand { font-family: var(--font-display); font-weight: 700; }
+.nav { display: flex; gap: 1.4rem; }
+.nav a { text-decoration: none; color: var(--text); font-size: .95rem; }
+.nav a:hover { color: var(--accent); }
+
+/* ---------- hero ---------- */
+.hero { padding: var(--section-pad) 0; }
+.hero-inner {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 3rem; align-items: center;
+}
+.kicker {
+  text-transform: uppercase; letter-spacing: .12em;
+  font-size: .8rem; color: var(--accent); margin: 0 0 .4rem;
+}
+.lede { font-size: 1.15rem; color: var(--text-muted); }
+.hero-photo {
+  aspect-ratio: 4/5; border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, var(--accent) 0%, transparent 130%),
+    var(--surface);
+  border: 1px solid var(--border);
+}
+.hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.6rem; }
+
+/* ---------- botones ---------- */
+.btn {
+  display: inline-block; padding: .75rem 1.5rem;
+  border-radius: var(--radius); text-decoration: none;
+  font-weight: 600; font-size: .95rem;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent); color: var(--accent-contrast); }
+.btn-ghost   { border-color: var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- secciones ---------- */
+.section { padding: var(--section-pad) 0; }
+.section-alt { background: var(--surface); }
+.prose p { max-width: 65ch; }
+.credentials { padding-left: 1.2rem; color: var(--text-muted); }
+.credentials li { margin-bottom: .35rem; }
+
+/* ---------- cards ---------- */
+.cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.card p:last-child { margin-bottom: 0; }
+.post-meta { font-size: .8rem; color: var(--text-muted); margin-bottom: .4rem; }
+.read-more { font-weight: 600; text-decoration: none; font-size: .9rem; }
+
+/* ---------- timeline ---------- */
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li {
+  padding: 0 0 1.8rem 1.5rem;
+  border-left: 2px solid var(--border);
+  position: relative;
+}
+.timeline li::before {
+  content: ""; position: absolute; left: -7px; top: .35rem;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent);
+}
+.timeline li:last-child { border-left-color: transparent; }
+.tl-date { display: block; font-size: .8rem; color: var(--text-muted); margin-bottom: .15rem; }
+
+/* ---------- contacto ---------- */
+.contact-inner { max-width: 620px; }
+.contact-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.4rem 0; }
+.contact-note { font-size: .85rem; color: var(--text-muted); }
+
+/* ---------- footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0; font-size: .9rem; color: var(--text-muted);
+}
+.fineprint { font-size: .78rem; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 760px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; max-width: 320px; }
+  .cards { grid-template-columns: 1fr; }
+  .nav { display: none; } /* en la variante real iría un menú hamburguesa */
+}

@@ -1,0 +1,43 @@
+/* 2 · Moderno minimalista — sans, mucho aire, un solo acento.
+   Perfil: consultores, diseñadores, profesionales jóvenes. */
+
+:root {
+  --font-display: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  --font-body: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  --bg: #ffffff;
+  --surface: #fafafa;
+  --text: #111111;
+  --text-muted: #777777;
+  --accent: #0d9488;          /* teal único acento */
+  --accent-contrast: #ffffff;
+  --border: #efefef;
+  --radius: 12px;
+  --max-w: 1040px;
+  --section-pad: 6rem;
+}
+
+body { letter-spacing: -0.01em; }
+h1 { font-weight: 800; letter-spacing: -0.035em; }
+h2 { font-weight: 700; letter-spacing: -0.025em; }
+
+.site-header { border-bottom: none; }
+.brand { font-weight: 800; letter-spacing: -0.02em; }
+.nav a { color: var(--text-muted); }
+.nav a:hover { color: var(--text); }
+
+.hero { padding-top: 7rem; }
+.kicker { font-weight: 600; }
+.hero-photo {
+  background: linear-gradient(150deg, #ccfbf1, var(--surface));
+  border: none;
+}
+
+.btn { border-radius: 999px; padding: .8rem 1.7rem; }
+.btn-primary { box-shadow: 0 4px 14px rgba(13,148,136,.25); }
+.btn-ghost { border-color: transparent; color: var(--text-muted); }
+.btn-ghost:hover { color: var(--accent); border-color: transparent; }
+
+/* cards sin borde: la separación la da el fondo */
+.card { border: none; background: var(--surface); }
+.section-alt .card { background: var(--bg); }
+.read-more { color: var(--accent); }

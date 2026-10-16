@@ -1,0 +1,56 @@
+/* 5 · Corporativo — grilla ordenada, azules/grises, barra superior sólida.
+   Perfil: estudios, pymes, servicios B2B. */
+
+:root {
+  --font-display: 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Segoe UI', system-ui, sans-serif;
+  --bg: #ffffff;
+  --surface: #f3f5f8;
+  --text: #1f2a3a;
+  --text-muted: #5a6b80;
+  --accent: #1d5fa8;          /* azul corporativo */
+  --accent-contrast: #ffffff;
+  --border: #d8e0ea;
+  --radius: 6px;
+  --max-w: 1140px;
+  --section-pad: 4rem;
+}
+
+.site-header {
+  background: var(--accent); border-bottom: none;
+}
+.brand { color: #fff; }
+.nav a { color: rgba(255,255,255,.85); }
+.nav a:hover { color: #fff; }
+
+.hero { background: linear-gradient(180deg, var(--surface), var(--bg)); }
+.hero-photo {
+  background: linear-gradient(160deg, #2c5d8f, var(--surface));
+  border-radius: var(--radius);
+}
+
+h2 {
+  position: relative; padding-bottom: .7rem;
+}
+h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 48px; height: 3px; background: var(--accent);
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(31,42,58,.07);
+  border-top: 3px solid var(--accent);
+}
+
+.timeline li::before { border-radius: 2px; }
+
+.contact-inner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  max-width: 720px;
+}
+
+.site-footer { background: #16212e; color: #9fb0c2; border-top: none; }
+.site-footer .fineprint { color: #6d8098; }

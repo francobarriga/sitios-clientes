@@ -1,0 +1,43 @@
+/* 6 · Dark — fondo oscuro, acento vivo, ideal para técnicos/fotógrafos. */
+
+:root {
+  --font-display: 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Segoe UI', system-ui, sans-serif;
+  --bg: #0f1216;
+  --surface: #171c22;
+  --text: #e8ecf1;
+  --text-muted: #93a0ae;
+  --accent: #38bdf8;          /* cyan vivo */
+  --accent-contrast: #0f1216;
+  --border: #28303a;
+  --radius: 10px;
+  --max-w: 1040px;
+}
+
+body { background: var(--bg); }
+
+.site-header { background: var(--bg); border-bottom-color: var(--border); }
+.nav a { color: var(--text-muted); }
+.nav a:hover { color: var(--accent); }
+
+.hero-photo {
+  background:
+    radial-gradient(circle at 70% 30%, rgba(56,189,248,.35), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost { border-color: var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-primary { font-weight: 700; }
+
+.card { background: var(--surface); border-color: var(--border); }
+.card:hover { border-color: var(--accent); }
+.read-more { color: var(--accent); }
+
+.section-alt { background: #0b0e12; }
+
+.timeline li { border-left-color: var(--border); }
+.timeline li::before { box-shadow: 0 0 10px var(--accent); }
+
+.site-footer { border-top-color: var(--border); }
