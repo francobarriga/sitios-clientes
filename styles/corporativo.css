@@ -1,5 +1,6 @@
-/* 5 · Corporativo — IBM Plex, grilla ordenada, azul institucional.
-   Perfil: estudios, pymes, servicios B2B. */
+/* 5 · Corporativo — inspirado en Spectral (HTML5 UP).
+   Hero full-bleed con foto duotono azul, título centrado con
+   reglas arriba/abajo, CTA sólido. Perfil: estudios, pymes, B2B. */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
@@ -15,21 +16,41 @@
   --border: #d8e0ea;
   --radius: 4px;
   --max-w: 1140px;
-  --section-pad: 4rem;
+  --section-pad: 4.5rem;
+  --photo-img: url('https://picsum.photos/seed/skyline/1900/1000');
 }
 
 h1, h2 { font-weight: 600; }
-.kicker { color: var(--text-muted); font-weight: 500; }
+.kicker { color: rgba(255,255,255,.8); font-weight: 500; font-size: .9rem; }
 
 .site-header { background: var(--accent); border-bottom: none; }
 .brand { font-family: var(--font-body); color: #fff; font-weight: 600; }
 .nav a { color: rgba(255,255,255,.85); }
+.nav a::after { background: #fff; }
 .nav a:hover { color: #fff; }
 
-.hero { background: linear-gradient(180deg, var(--surface), var(--bg)); }
-.hero-photo {
-  background: linear-gradient(160deg, #2c5d8f, var(--surface));
+/* hero duotono — Spectral */
+.hero {
+  padding: 6.5rem 0;
+  background:
+    linear-gradient(160deg, rgba(20,45,75,.82), rgba(29,95,168,.55)),
+    var(--photo-img) center/cover no-repeat;
+  color: #fff;
 }
+.hero-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+.hero-photo { display: none; }
+.hero h1 {
+  color: #fff;
+  max-width: 20ch;
+  padding: .9rem 1.6rem;
+  border-top: 2px solid rgba(255,255,255,.65);
+  border-bottom: 2px solid rgba(255,255,255,.65);
+}
+.hero .lede { color: rgba(255,255,255,.85); max-width: 52ch; }
+.btn-primary { background: #fff; color: var(--accent); }
+.btn-primary:hover { background: var(--accent-contrast); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.btn-ghost { border-color: rgba(255,255,255,.7); color: #fff; }
+.btn-ghost:hover { border-color: #fff; color: #fff; }
 
 h2 { position: relative; padding-bottom: .7rem; }
 h2::after {
@@ -37,10 +58,7 @@ h2::after {
   width: 48px; height: 3px; background: var(--accent);
 }
 
-.card {
-  box-shadow: 0 2px 8px rgba(31,42,58,.07);
-  border-top: 3px solid var(--accent);
-}
+.card { box-shadow: 0 2px 8px rgba(31,42,58,.07); border-top: 3px solid var(--accent); }
 
 .timeline li::before { border-radius: 2px; }
 

@@ -1,5 +1,6 @@
-/* 2 · Moderno minimalista — aire, un acento, listas con reglas
-   en lugar de tarjetas (para no caer en el "SaaS card kit").
+/* 2 · Moderno minimalista — inspirado en AstroPaper / Read Only.
+   Ultra-aireado, una sola columna, links con subrayado punteado,
+   listas con reglas finas en vez de tarjetas.
    Perfil: consultores, diseñadores, profesionales jóvenes. */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap');
@@ -7,55 +8,67 @@
 :root {
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Instrument Sans', system-ui, sans-serif;
-  --bg: #ffffff;
-  --surface: #f6f6f5;
-  --text: #141414;
-  --text-muted: #6e6e6e;
-  --accent: #0e7569;          /* verde petróleo, no el teal genérico */
+  --bg: #fbfbf9;
+  --surface: #f2f2ee;
+  --text: #1c1c1a;
+  --text-muted: #6e6e6a;
+  --accent: #0284c7;
   --accent-contrast: #ffffff;
-  --border: #e2e2df;
+  --border: #e2e2dc;
   --radius: 10px;
-  --max-w: 1000px;
-  --section-pad: 5.5rem;
+  --max-w: 780px;
+  --section-pad: 4.5rem;
 }
 
-h1 { font-weight: 700; letter-spacing: -0.03em; }
-h2 { font-weight: 700; letter-spacing: -0.02em; }
-.kicker { font-weight: 400; font-size: .9rem; color: var(--text-muted); }
+h1 { font-weight: 700; letter-spacing: -0.03em; font-size: clamp(2.4rem, 5.5vw, 3.6rem); }
+h2 { font-weight: 700; letter-spacing: -0.02em; font-size: 1.4rem; }
+.kicker { font-weight: 600; font-size: .9rem; color: var(--accent); }
 
-.site-header { border-bottom: none; }
+.site-header { border-bottom: 1px solid var(--border); }
 .brand { font-family: var(--font-display); font-weight: 700; }
 .nav a { color: var(--text-muted); }
-.nav a:hover { color: var(--text); }
+.nav a:hover { color: var(--accent); }
 
-.hero { padding-top: 6.5rem; }
-.hero-photo {
-  background: linear-gradient(150deg, #d3ece8, var(--surface));
-  border: none;
+/* AstroPaper no lleva foto en el hero: todo tipografía y aire */
+.hero { padding-top: 5.5rem; }
+.hero-inner { grid-template-columns: 1fr; }
+.hero-photo { display: none; }
+.lede { font-size: 1.15rem; max-width: 42ch; }
+
+/* links del estilo AstroPaper: subrayado punteado que se vuelve sólido */
+.prose a, .read-more, .site-footer a {
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+.prose a:hover, .read-more:hover {
+  text-decoration-style: solid;
 }
 
 .btn { border-radius: 999px; padding: .8rem 1.7rem; }
-.btn-ghost { border-color: transparent; color: var(--text-muted); }
-.btn-ghost:hover { color: var(--accent); border-color: transparent; }
+.btn-ghost { border-color: var(--border); color: var(--text-muted); }
+.btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
 
-/* listas con reglas finas, no tarjetas: estructura, no decoración */
+/* filas separadas por reglas — estructura, no tarjetas */
 .cards { grid-template-columns: 1fr; gap: 0; }
 .card {
   border: none; border-radius: 0;
   background: transparent;
   border-top: 1px solid var(--border);
   padding: 1.4rem 0;
-  display: grid; grid-template-columns: 1fr 2fr; gap: 1rem 2rem;
+  display: grid; grid-template-columns: 1fr 2fr; gap: .2rem 2rem;
 }
-.card h3 { margin: 0; }
+.card:hover {
+  transform: none; box-shadow: none; border-top-color: var(--border);
+}
+.card:hover h3 { color: var(--accent); }
+.card h3 { margin: 0; transition: color .2s ease; }
 .card p { margin: 0; }
-.card p + p { grid-column: 2; }
-.card .read-more { grid-column: 2; margin-top: .4rem; }
-.post-meta { grid-column: 1 / -1; margin-bottom: -.4rem; }
+.post-meta { grid-column: 1 / -1; margin-bottom: .1rem; }
+.card .read-more { grid-column: 2; margin-top: .5rem; }
 
-.section-alt { background: var(--surface); }
+.section-alt { background: var(--bg); }
 
 @media (max-width: 760px) {
   .card { grid-template-columns: 1fr; }
-  .card p + p, .card .read-more { grid-column: 1; }
+  .card .read-more { grid-column: 1; }
 }
