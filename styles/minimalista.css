@@ -1,43 +1,61 @@
-/* 2 · Moderno minimalista — sans, mucho aire, un solo acento.
+/* 2 · Moderno minimalista — aire, un acento, listas con reglas
+   en lugar de tarjetas (para no caer en el "SaaS card kit").
    Perfil: consultores, diseñadores, profesionales jóvenes. */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
 :root {
-  --font-display: -apple-system, 'Segoe UI', system-ui, sans-serif;
-  --font-body: -apple-system, 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, sans-serif;
   --bg: #ffffff;
-  --surface: #fafafa;
-  --text: #111111;
-  --text-muted: #777777;
-  --accent: #0d9488;          /* teal único acento */
+  --surface: #f6f6f5;
+  --text: #141414;
+  --text-muted: #6e6e6e;
+  --accent: #0e7569;          /* verde petróleo, no el teal genérico */
   --accent-contrast: #ffffff;
-  --border: #efefef;
-  --radius: 12px;
-  --max-w: 1040px;
-  --section-pad: 6rem;
+  --border: #e2e2df;
+  --radius: 10px;
+  --max-w: 1000px;
+  --section-pad: 5.5rem;
 }
 
-body { letter-spacing: -0.01em; }
-h1 { font-weight: 800; letter-spacing: -0.035em; }
-h2 { font-weight: 700; letter-spacing: -0.025em; }
+h1 { font-weight: 700; letter-spacing: -0.03em; }
+h2 { font-weight: 700; letter-spacing: -0.02em; }
+.kicker { font-weight: 400; font-size: .9rem; color: var(--text-muted); }
 
 .site-header { border-bottom: none; }
-.brand { font-weight: 800; letter-spacing: -0.02em; }
+.brand { font-family: var(--font-display); font-weight: 700; }
 .nav a { color: var(--text-muted); }
 .nav a:hover { color: var(--text); }
 
-.hero { padding-top: 7rem; }
-.kicker { font-weight: 600; }
+.hero { padding-top: 6.5rem; }
 .hero-photo {
-  background: linear-gradient(150deg, #ccfbf1, var(--surface));
+  background: linear-gradient(150deg, #d3ece8, var(--surface));
   border: none;
 }
 
 .btn { border-radius: 999px; padding: .8rem 1.7rem; }
-.btn-primary { box-shadow: 0 4px 14px rgba(13,148,136,.25); }
 .btn-ghost { border-color: transparent; color: var(--text-muted); }
 .btn-ghost:hover { color: var(--accent); border-color: transparent; }
 
-/* cards sin borde: la separación la da el fondo */
-.card { border: none; background: var(--surface); }
-.section-alt .card { background: var(--bg); }
-.read-more { color: var(--accent); }
+/* listas con reglas finas, no tarjetas: estructura, no decoración */
+.cards { grid-template-columns: 1fr; gap: 0; }
+.card {
+  border: none; border-radius: 0;
+  background: transparent;
+  border-top: 1px solid var(--border);
+  padding: 1.4rem 0;
+  display: grid; grid-template-columns: 1fr 2fr; gap: 1rem 2rem;
+}
+.card h3 { margin: 0; }
+.card p { margin: 0; }
+.card p + p { grid-column: 2; }
+.card .read-more { grid-column: 2; margin-top: .4rem; }
+.post-meta { grid-column: 1 / -1; margin-bottom: -.4rem; }
+
+.section-alt { background: var(--surface); }
+
+@media (max-width: 760px) {
+  .card { grid-template-columns: 1fr; }
+  .card p + p, .card .read-more { grid-column: 1; }
+}
